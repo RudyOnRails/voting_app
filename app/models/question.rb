@@ -1,11 +1,18 @@
 class Question < ActiveRecord::Base
-  attr_accessible :title, :parent_id, :user_id
-  
+  attr_accessible :title, :user_id
+
+  validates :title, :presence => true
+
   belongs_to :parent
   belongs_to :user
+  has_many :votes
 
-  def add_vote
-    
+  def vote(user)
+    self.votes << Vote.new(user: user)
+  end
+
+  def score()
+    self.votes.count
   end
 
 end

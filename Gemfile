@@ -42,4 +42,15 @@ gem "haml-rails"
 gem "twitter-bootstrap-rails"
 gem "heroku"
 gem "therubyracer"
-gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'annotate'
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+gem "webrat"
+gem "ZenTest"
+gem "autotest-rails"
+gem "spork-rails"
+gem 'devise'
+gem 'database_cleaner'
