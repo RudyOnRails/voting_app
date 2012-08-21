@@ -8,11 +8,16 @@ class Question < ActiveRecord::Base
   has_many :votes
 
   def vote(user)
-    self.votes << Vote.new(user: user)
+    if self.votes.where(:user_id => user).present?
+      return nil
+    else
+      self.votes << Vote.new(:user => user)
+      true
+    end
   end
 
   def score()
     self.votes.count
   end
 
-end
+end 
