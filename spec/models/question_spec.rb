@@ -26,11 +26,14 @@ describe Question do
   end
 
   it "has a score of 0 with no votes" do
-    pending
+    @q.score.should == 0
   end
 
-  it "doesn't allow the same user to vote more than once" do
-    pending
+  it "should only allow users to vote once" do
+    @q.vote(@u1)
+    @q.vote(@u1).should be_false
+
+    @q.score.should == 1
   end
 
 
