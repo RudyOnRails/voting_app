@@ -1,4 +1,4 @@
-require 'spec_helper'
+grequire 'spec_helper'
 
 describe "Question Model" do
   before(:each) do
