@@ -1,4 +1,4 @@
-sGEM
+GEM
   remote: https://rubygems.org/
   specs:
     ZenTest (4.8.2)
