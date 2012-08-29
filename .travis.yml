@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 1.9.3
 before_script:
-  - bundle exec rake db:create:test
+  - bundle exec rake db:create:all
 script:
   - bundle exec rspec spec/fast
   - bundle exec rspec spec/lib --tag ~travis_skip
