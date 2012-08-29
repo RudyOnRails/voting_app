@@ -3,8 +3,6 @@ rvm:
   - 1.9.3
 before_script:
   - bundle exec rake db:create:all
+  - bundle exec rake db:migrate db:test:prepare
 script:
-  - bundle exec rspec spec/fast
-  - bundle exec rspec spec/lib --tag ~travis_skip
-  - bundle exec rspec spec/controllers spec/integration spec/models
-  - "bundle exec cucumber --tags ~@javascript --tags ~@travis_skip"
+  - bundle exec rspec spec
