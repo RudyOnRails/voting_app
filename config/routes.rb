@@ -3,6 +3,9 @@ VotingTutorial::Application.routes.draw do
 
   resources :questions
 
+  match 'questions/:id/upvote' => 'questions#upvote', :as => :upvote
+  match 'questions/:id/downvote' => 'questions#downvote', :as => :downvote
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -12,8 +12,17 @@ class Question < ActiveRecord::Base
     if self.votes.where(:user_id => user).present?
       return nil
     else
-      self.votes << Vote.new(:user => user)
+      self.votes << Vote.create(:user => user)
       true
+    end
+  end
+
+  def downvote(user)
+    if self.votes.where(:user_id => user).present?
+      @vote = self.votes.where(:user_id => user)
+      @vote.destroy_all
+    else
+      return nil
     end
   end
 

@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+
   # GET /questions
   # GET /questions.json
   def index
@@ -79,5 +80,17 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_url }
       format.json { head :no_content }
     end
+  end
+  
+  def upvote
+    @question_we_are_upvoting = Question.find(params[:id])
+    @question_we_are_upvoting.vote(@current_user)
+    redirect_to root_url
+  end
+
+  def downvote
+    @question_we_are_downvoting = Question.find(params[:id])
+    @question_we_are_downvoting.downvote(@current_user)
+    redirect_to root_url
   end
 end
