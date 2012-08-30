@@ -1,1 +1,3 @@
 my little voting app, WITH testing!
+
+{<img src="https://secure.travis-ci.org/RudyOnRails/voting_app.png" />}[http://travis-ci.org/RudyOnRails/voting_app]
